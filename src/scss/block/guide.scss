@@ -1,0 +1,58 @@
+.guide{
+  padding-bottom: 24px;
+
+  &:first-child{
+    margin-top: 18px;
+  }
+
+}
+
+.guide__title{
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.guide__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,auto));
+
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+
+  text-align: center;
+}
+
+.guide__item{
+
+}
+
+.guide__link{
+  display: block;
+
+  padding: 24px 5px;
+
+  background-color: rgba(#ededed, 0.8);
+
+  color: #626262;
+
+  text-decoration: none;
+
+  border-radius: 4px;
+
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &:hover{
+    color: $red;
+
+    background-color: rgba(#9d1313,0.2);
+  }
+
+  &:active{
+    opacity: 0.8;
+  }
+
+}

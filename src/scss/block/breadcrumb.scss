@@ -1,0 +1,20 @@
+.custom-breadcrumb{
+  margin-top: 24px;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+}
+
+.custom-breadcrumb .breadcrumb-item{
+  color: $red
+}
+
+.custom-breadcrumb .breadcrumb-item a{
+  color: #626262
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover{
+  text-decoration: none;
+  color: $red
+}

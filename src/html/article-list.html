@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Демо Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/0ebdd1ffbb.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body class="body-custom">
+
+    <header class="p-3 mb-3 mb-md-0 border-bottom custom-header">
+      <div class="container">
+
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_oscnhnfb.json"  background="transparent"  speed="0.5"  style="width: 50px; height: 50px;"  loop  autoplay></lottie-player>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="article-list.html" class="nav-link px-2 link-dark">Статьи</a></li>
+            <li><a href="/" class="nav-link px-2 link-dark">Справочники</a></li>
+          </ul>
+
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+            <input type="search" class="form-control" placeholder="Поиск..." aria-label="Поиск">
+          </form>
+
+        </div>
+
+      </div>
+    </header><!--/.header-->
+
+    <main class="body-main">
+
+      <div class="container">
+        <div class="row custom-row--align">
+
+          <div class="col-md-3 col-xl-2 custom-sidebar">
+
+            <div class="d-flex align-items-center pt-3 pb-3 mb-3 link-dark text-decoration-none border-bottom custom-sidebar-title js-parent-burger">
+              <span class="fs-5 fw-semibold">Статьи</span>
+              <button class="custom-sidebar-burger" type="button" aria-label="Открыть меню каталога"></button>
+            </div>
+
+            <ul class="list-unstyled ps-0 js-sidebar-menu sidebar-menu-hide">
+
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed custom-sidebar-upper-btn" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                  Web-языки
+                </button>
+                <div class="collapse" id="home-collapse">
+
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+
+                    <li><a href="article-list-category.html" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">PHP + MySQL</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">JS + Jquery</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Python</a></li>
+
+                  </ul>
+
+                </div>
+
+              </li><!-- /.категория-->
+
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed custom-sidebar-upper-btn" data-bs-toggle="collapse" data-bs-target="#cms-collapse" aria-expanded="false">
+                  CMS
+                </button>
+                <div class="collapse" id="cms-collapse">
+
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Bitrix</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Bitrix24</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">WordPress</a></li>
+
+                  </ul>
+
+                </div>
+
+              </li><!-- /.категория-->
+
+            </ul>
+
+          </div>
+
+          <div class="col-md-9 col-xl-10" >
+
+            <div class="content">
+
+              <div class="article-list">
+
+                <h1 class="article-list-title">Новинки</h1>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="article-list-category.html">PHP + MySQL</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">Php-fpm может быть запущен как static и как dynamic?</h5>
+                        <p class="card-text custom-card-text">Я старый, толстый, глухой удав, но... Я не верю в конфигурацию статик. Не верю потому, что PHP течет памятью.</p>
+                        <a href="article-item.html" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="">JS + Jquery</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">С чего начать учить PHP</h5>
+                        <p class="card-text custom-card-text">В этой статье разберемся в перспективах и популярности PHP в 2022 году, рассмотрим плюсы и минусы языка</p>
+                        <a href="#" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="">Python</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">Для чего используют PHP и почему его ненавидят</h5>
+                        <p class="card-text custom-card-text">Для чего нужен PHP: какие возможности он дает разработчикам, что можно реализовать с его помощью</p>
+                        <a href="#" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="">Bitrix</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">Как я устроился на работу после прохождения курса по PHP</h5>
+                        <p class="card-text custom-card-text">Я искал и изучал много материала в интернете. Проходил много платных курсов.</p>
+                        <a href="#" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="">PHP + MySQL</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">Php-fpm может быть запущен как static и как dynamic?</h5>
+                        <p class="card-text custom-card-text">Я старый, толстый, глухой удав, но... Я не верю в конфигурацию статик. Не верю потому, что PHP течет памятью.</p>
+                        <a href="#" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card custom-card">
+                      <div class="custom-card-inner">
+                        <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top custom-card-img" alt="...">
+                        <span class="custom-card-category">
+                          <a href="">PHP + MySQL</a>
+                        </span>
+                      </div>
+                      <div class="card-body custom-card-body">
+                        <h5 class="card-title">С чего начать учить PHP</h5>
+                        <p class="card-text custom-card-text">В этой статье разберемся в перспективах и популярности PHP в 2022 году, рассмотрим плюсы и минусы языка</p>
+                        <a href="#" class="btn btn-outline-danger custom-card-btn">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-top mt-3 mt-md-0 custom-footer">
+
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-md-0 text-muted text-decoration-none lh-1">
+              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_w1djslar.json"  background="transparent"  speed="0.4"  style="width: 30px; height: 26px;"  loop  autoplay></lottie-player>
+            </a>
+            <span class="mb-md-0 text-muted">© 2022</span>
+          </div>
+
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-instagram"></i></a></li>
+            <li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-facebook"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+  </body>
+
+</html>

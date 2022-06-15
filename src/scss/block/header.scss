@@ -1,0 +1,11 @@
+.custom-header{
+  background-color: rgba(245, 245, 245, 0.6);
+
+  @media (max-width: 575px) {
+    margin-bottom: 0!important;
+  }
+}
+
+.custom-footer-link:hover{
+  color: $red!important;
+}

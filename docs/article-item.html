@@ -1,0 +1,154 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Демо Bootstrap</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"><script defer="defer" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><script defer="defer" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script><script defer="defer" src="https://kit.fontawesome.com/0ebdd1ffbb.js" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css"><script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script><script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/go.min.js"></script><script defer="defer" src="assets/js/build.5e8bf2fbcfb6fd9aafbb.js"></script><script defer="defer" src="assets/js/highlight.05909404ac328cb31bcd.js"></script><link href="assets/css/style.b1a07cd36c3448520b2f.css" rel="stylesheet"></head><body class="body-custom"><header class="p-3 mb-3 mb-md-0 border-bottom custom-header"><div class="container"><div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"><a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_oscnhnfb.json" background="transparent" speed="0.5" style="width:50px;height:50px" loop autoplay></lottie-player></a><ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"><li><a href="article-list.html" class="nav-link px-2 link-dark">Статьи</a></li><li><a href="/" class="nav-link px-2 link-dark">Справочники</a></li></ul><form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search"><input type="search" class="form-control" placeholder="Поиск..." aria-label="Поиск"></form></div></div></header><main class="body-main"><div class="container"><div class="row custom-row--align"><div class="col-md-3 col-xl-2 custom-sidebar"><div class="d-flex align-items-center pt-3 pb-3 mb-3 link-dark text-decoration-none border-bottom custom-sidebar-title js-parent-burger"><span class="fs-5 fw-semibold">Статьи</span> <button class="custom-sidebar-burger" type="button" aria-label="Открыть меню каталога"></button></div><ul class="list-unstyled ps-0 js-sidebar-menu sidebar-menu-hide"><li class="mb-1"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed custom-sidebar-upper-btn" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Web-языки</button><div class="collapse" id="home-collapse"><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a href="article-list-category.html" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">PHP + MySQL</a></li><li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">JS + Jquery</a></li><li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Python</a></li></ul></div></li><li class="mb-1"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed custom-sidebar-upper-btn" data-bs-toggle="collapse" data-bs-target="#cms-collapse" aria-expanded="false">CMS</button><div class="collapse" id="cms-collapse"><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Bitrix</a></li><li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">Bitrix24</a></li><li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded custom-sidebar-link custom-sidebar-link--margin_left">WordPress</a></li></ul></div></li></ul></div><div class="col-md-9 col-xl-10"><div class="content"><nav aria-label="breadcrumb"><ol class="breadcrumb custom-breadcrumb"><li class="breadcrumb-item"><a href="#">Главная</a></li><li class="breadcrumb-item"><a href="#">PHP + MySQL</a></li><li class="breadcrumb-item active" aria-current="page">Php-fpm может ...</li></ol></nav><div class="article-item"><h1>CRUD на PHP для работы с MySQL: пошаговый урок для начинающих</h1><p>В этой статье мы рассмотрим разработку простого набора CRUD операций на PHP, предназначенного для работы с базой данных MySQL. Для создания кода CRUD будет использовано расширение MySQLi, для оформления – стили Bootstrap. Приложение будет выполнять все стандартные операции CRUD – создание, чтение, модификацию и удаление записей.</p><h3>Шаг 1: Создание таблицы базы данных</h3><p>Приведенная ниже SQL команда создает таблицу с данными пользователей в базе MySQL.</p><pre><code class="lang-sql">CREATE TABLE users (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);</code></pre><h3>Шаг 2: Создание файла конфигурации</h3><p>После создания таблицы мы переходим к настройке подключения к серверу базы данных MySQL. Для этого нужно создать файл <strong>config.php</strong> и поместить в него приведенный ниже код.</p><pre><code class="lang-sql">define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'php_crud');
+
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+if ($conn === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+</code></pre><p>Это подключение можно вызывать на всех страницах – с помощью PHP функции require_once().</p><h3>Шаг 3: Посадочная страница</h3><p>На посадочной странице данные пользователей будут выводиться в виде таблицы. Мы предусмотрим иконки для операций редактирования, просмотра и удаления данных.</p><p>Для создания лендинга мы добавим файл <strong>index.php</strong> в директорию CRUD. Вставьте в файл данный ниже код.</p><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;title&gt;Dashboard&lt;/title&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css&quot;&gt;
+      &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+      &lt;style type=&quot;text/css&quot;&gt;
+          .wrapper {
+              width: 1200px;
+              margin: 0 auto;
+          }
+      &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+              &lt;h2 class=&quot;text-center&quot;&gt;PHP CRUD Tutorial Example with &lt;a href=&quot;https://codingdriver.com/&quot;&gt;Coding Driver&lt;/a&gt;&lt;/h2&gt;
+                &lt;div class=&quot;col-md-12&quot;&gt;
+                    &lt;div class=&quot;page-header clearfix&quot;&gt;
+                        &lt;h2 class=&quot;pull-left&quot;&gt;Users&lt;/h2&gt;
+                        &lt;a href=&quot;create.php&quot; class=&quot;btn btn-success pull-right&quot;&gt;Add New User&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;?php
+                    // Include config file
+                    require_once &quot;config.php&quot;;
+
+                    // select all users
+                    $data = &quot;SELECT * FROM users&quot;;
+                    if($users = mysqli_query($conn, $data)){
+                        if(mysqli_num_rows($users) &gt; 0){
+                            echo &quot;&lt;table class=&apos;table table-bordered table-striped&apos;&gt;
+                                    &lt;thead&gt;
+                                      &lt;tr&gt;
+                                        &lt;th&gt;#&lt;/th&gt;
+                                        &lt;th&gt;First Name&lt;/th&gt;
+                                        &lt;th&gt;Last Name&lt;/th&gt;
+                                        &lt;th&gt;Email&lt;/th&gt;
+                                        &lt;th&gt;Phone Number&lt;/th&gt;
+                                        &lt;th&gt;Address&lt;/th&gt;
+                                        &lt;th&gt;Action&lt;/th&gt;
+                                      &lt;/tr&gt;
+                                    &lt;/thead&gt;
+                                    &lt;tbody&gt;&quot;;
+                                while($user = mysqli_fetch_array($users)) {
+                                    echo &quot;&lt;tr&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;id&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;first_name&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;last_name&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;email&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;phone_number&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;&quot; . $user[&apos;address&apos;] . &quot;&lt;/td&gt;
+                                            &lt;td&gt;
+                                              &lt;a href=&apos;read.php?id=&quot;. $user[&apos;id&apos;] .&quot;&apos; title=&apos;View User&apos; data-toggle=&apos;tooltip&apos;&gt;&lt;span class=&apos;glyphicon glyphicon-eye-open&apos;&gt;&lt;/span&gt;&lt;/a&gt;
+                                              &lt;a href=&apos;edit.php?id=&quot;. $user[&apos;id&apos;] .&quot;&apos; title=&apos;Edit User&apos; data-toggle=&apos;tooltip&apos;&gt;&lt;span class=&apos;glyphicon glyphicon-pencil&apos;&gt;&lt;/span&gt;&lt;/a&gt;
+                                              &lt;a href=&apos;delete.php?id=&quot;. $user[&apos;id&apos;] .&quot;&apos; title=&apos;Delete User&apos; data-toggle=&apos;tooltip&apos;&gt;&lt;span class=&apos;glyphicon glyphicon-trash&apos;&gt;&lt;/span&gt;&lt;/a&gt;
+                                            &lt;/td&gt;
+                                          &lt;/tr&gt;&quot;;
+                                }
+                                echo &quot;&lt;/tbody&gt;
+                                &lt;/table&gt;&quot;;
+                            mysqli_free_result($users);
+                        } else{
+                            echo &quot;&lt;p class=&apos;lead&apos;&gt;&lt;em&gt;No records found.&lt;/em&gt;&lt;/p&gt;&quot;;
+                        }
+                    } else{
+                        echo &quot;ERROR: Could not able to execute $sql. &quot; . mysqli_error($conn);
+                    }
+
+                    // Close connection
+                    mysqli_close($conn);
+                    ?&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><p>Можно вставить какие-нибудь тестовые данные прямо в таблицу базы данных, изменения отобразятся на странице.</p><h3>Шаг 4: Удаление записей</h3><p>На заключительном этапе мы разработаем функцию удаления записей. Создайте файл <strong>delete.php</strong>, вставьте в него приведенный ниже код, который отвечает за удаление существующих в базе записей по ID пользователя.</p><pre><code class="lang-sql">&lt;?php
+if (isset($_POST[&quot;id&quot;]) &amp;&amp; !empty($_POST[&quot;id&quot;])) {
+    require_once &quot;config.php&quot;;
+    $id = $_POST[&quot;id&quot;];
+
+    $query = &quot;DELETE FROM users WHERE id = &apos;$id&apos;&quot;;
+
+    if (mysqli_query($conn, $query)) {
+        header(&quot;location: index.php&quot;);
+    } else {
+         echo &quot;Something went wrong. Please try again later.&quot;;
+    }
+
+    mysqli_close($conn);
+} else {
+    if (empty(trim($_GET[&quot;id&quot;]))) {
+        echo &quot;Something went wrong. Please try again later.&quot;;
+        header(&quot;location: index.php&quot;);
+        exit();
+    }
+}
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;View Record&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css&quot;&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-md-12&quot;&gt;
+                    &lt;div class=&quot;page-header&quot;&gt;
+                        &lt;h1&gt;Delete Record&lt;/h1&gt;
+                    &lt;/div&gt;
+                    &lt;form action=&quot;&lt;?php echo htmlspecialchars($_SERVER[&quot;PHP_SELF&quot;]); ?&gt;&quot; method=&quot;post&quot;&gt;
+                        &lt;div class=&quot;alert alert-danger fade in&quot;&gt;
+                            &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;&lt;?php echo trim($_GET[&quot;id&quot;]); ?&gt;&quot;/&gt;
+                            &lt;p&gt;Are you sure you want to delete this record?&lt;/p&gt;&lt;br&gt;
+                            &lt;p&gt;
+                                &lt;input type=&quot;submit&quot; value=&quot;Yes&quot; class=&quot;btn btn-danger&quot;&gt;
+                                &lt;a href=&quot;index.php&quot; class=&quot;btn btn-default&quot;&gt;No&lt;/a&gt;
+                            &lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>Наконец, наш набор CRUD операций для работы с записями в базе данных MySQL готов. Если у вас есть вопросы или замечания – ждем их в комментариях.</p><p>Пожалуйста, оставьте свои мнения по текущей теме статьи. Мы очень благодарим вас за ваши комментарии, лайки, подписки, дизлайки, отклики!</p></div></div></div></div></div></main><footer class="border-top mt-3 mt-md-0 custom-footer"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-center py-3"><div class="col-md-4 d-flex align-items-center"><a href="/" class="mb-md-0 text-muted text-decoration-none lh-1"><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_w1djslar.json" background="transparent" speed="0.4" style="width:30px;height:26px" loop autoplay></lottie-player></a><span class="mb-md-0 text-muted">© 2022</span></div><ul class="nav col-md-4 justify-content-end list-unstyled d-flex"><li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li><li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-instagram"></i></a></li><li class="ms-3"><a class="text-muted custom-footer-link" href="#"><i class="fa fa-facebook"></i></a></li></ul></div></div></footer></body></html>
