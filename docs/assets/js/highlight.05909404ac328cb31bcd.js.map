@@ -1,1 +1,0 @@
-{"version":3,"file":"assets/js/highlight.05909404ac328cb31bcd.js","mappings":"AACAA,KAAKC","sources":["webpack://two-webpack/./src/highlight.js"],"sourcesContent":["\r\nhljs.highlightAll();\r\n"],"names":["hljs","highlightAll"],"sourceRoot":""}
