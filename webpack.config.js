@@ -41,6 +41,7 @@ module.exports = {
 
       template: "./src/html/index.html",  // путь к входному файлу (шаблону)
       filename: 'index.html',
+      minify: false,
       chunks: ['build']
 
     }),
@@ -49,6 +50,7 @@ module.exports = {
 
       template: "./src/html/guide-list.html",  // путь к входному файлу (шаблону)
       filename: 'guide-list.html',
+      minify: false,
       chunks: ['build']
 
     }),
@@ -57,6 +59,7 @@ module.exports = {
 
       template: "./src/html/guide-item.html",  // путь к входному файлу (шаблону)
       filename: 'guide-item.html',
+      minify: false,
       chunks: ['build', 'highlight']
 
     }),
@@ -66,6 +69,7 @@ module.exports = {
 
       template: "./src/html/article-list.html",  // путь к входному файлу (шаблону)
       filename: 'article-list.html',
+      minify: false,
       chunks: ['build']
 
     }),
@@ -74,6 +78,7 @@ module.exports = {
 
       template: "./src/html/article-list-category.html",  // путь к входному файлу (шаблону)
       filename: 'article-list-category.html',
+      minify: false,
       chunks: ['build']
 
     }),
@@ -82,6 +87,7 @@ module.exports = {
 
       template: "./src/html/article-item.html",  // путь к входному файлу (шаблону)
       filename: 'article-item.html',
+      minify: false,
       chunks: ['build', 'highlight']
 
     }),
@@ -120,7 +126,13 @@ module.exports = {
         loader: "html-loader",
         generator: {
           filename: 'assets/img/[hash][ext][query]' // указываем папку куда складывать картинки
-        }
+        },
+        options: {
+          minimize: {   // не минифицировать html
+            removeComments: false,
+            collapseWhitespace: false,
+          },
+        },
       },
 
       // Обработчик 3: ( для CSS | SASS | SCSS ) css-loader - подгружает css как модуль | style-loader вставляет стили в index.html
@@ -187,7 +199,8 @@ module.exports = {
   optimization: {
     splitChunks: {  // вырезает jQuery и подключает отдельным файлом
       chunks: 'all'
-    }
+    },
+
   },
 
   /* свойство Devtool - подключаем исходные карты */
