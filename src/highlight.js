@@ -1,2 +1,3 @@
+import './copy'
 
 hljs.highlightAll();
